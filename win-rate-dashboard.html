@@ -215,18 +215,18 @@
         </div>
         <div class="metric">
           <div class="k">Breakeven Win Rate</div>
-          <div class="v" id="beV">—</div>
+          <div class="v" id="beV">-</div>
           <div class="d">Win rate you actually need</div>
         </div>
         <div class="metric">
           <div class="k">Expectancy / Trade</div>
-          <div class="v" id="expV">—</div>
+          <div class="v" id="expV">-</div>
           <div class="d">Avg. profit per trade after fees</div>
         </div>
       </div>
 
       <div class="card">
-        <h2>Where the Money Goes — per trade, on average</h2>
+        <h2>Where the Money Goes - per trade, on average</h2>
         <div class="expl" id="expl"></div>
         <div class="formula">
           <code>Expectancy = (Win% × AvgWin) − (Loss% × AvgLoss) − Fees</code><br>
@@ -338,7 +338,7 @@ function render(){
   } else {
     badge.textContent='BREAKEVEN'; badge.className='badge';
     badge.style.cssText='background:rgba(245,196,81,.14);color:var(--gold);border:1px solid #7a6320';
-    vtext.innerHTML = `You're right at breakeven — every dollar won is given back to losses and fees.`;
+    vtext.innerHTML = `You're right at breakeven - every dollar won is given back to losses and fees.`;
   }
   if(badge.textContent!=='BREAKEVEN') badge.style.cssText='';
 
@@ -437,11 +437,11 @@ function drawEquity(w, aw, al, fee, nt, expectancy){
   // takeaway text
   const tk=$('takeaway');
   if(expectancy<0){
-    tk.innerHTML = `<b>The trap:</b> winning often feels great, but each rare loss (${fmt0(al)}) wipes out many small wins (${fmt0(aw)}). The curve grinds up, then craters. <b>Win rate alone tells you nothing</b> — expectancy does.`;
+    tk.innerHTML = `<b>The trap:</b> winning often feels great, but each rare loss (${fmt0(al)}) wipes out many small wins (${fmt0(aw)}). The curve grinds up, then craters. <b>Win rate alone tells you nothing</b> - expectancy does.`;
   } else if(expectancy>0){
     tk.innerHTML = `<b>This one works:</b> a positive expectancy of ${fmt(expectancy)}/trade means time and volume are on your side. Notice it can win even with a <b>lower</b> win rate, as long as wins outrun losses + fees.`;
   } else {
-    tk.innerHTML = `<b>Breakeven:</b> the curve drifts sideways — you're trading for free, handing your edge to fees.`;
+    tk.innerHTML = `<b>Breakeven:</b> the curve drifts sideways - you're trading for free, handing your edge to fees.`;
   }
 }
 
